@@ -1,2 +1,2 @@
-x = gets.to_i
-y = gets.chomp.split(" ").map(&:to_i)
+x = gets.to_s
+puts x.capitalize
