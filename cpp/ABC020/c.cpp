@@ -43,7 +43,11 @@ int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
 
-  
+  int h,w,t;
+  cin >> h >> w >> t;
+
+  int max_h = 10, max_w = 10;
+  int memo[max_h][max_w];
 
   return 0;
 }
