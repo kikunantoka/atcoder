@@ -43,7 +43,10 @@ int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
 
-  
+  int a;
+  cin >> a;
+  if (a == 1) cout << "ABC" << endl;
+  else cout << "chokudai" << endl;
 
   return 0;
 }

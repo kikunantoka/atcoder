@@ -43,7 +43,11 @@ int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
 
-  
+  string a,b;
+  cin >> a >> b;
+
+  a = a + b;
+  cout << toInt(a)*2 << endl;
 
   return 0;
 }
