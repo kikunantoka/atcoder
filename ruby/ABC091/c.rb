@@ -13,11 +13,11 @@ n.times.each do
   blues.push(x: x, y: y)
 end
 
-reds.sort! { |a, b| a[:x] <=> b[:x] }
-blues.sort! { |a, b| a[:x] <=> b[:x] }
+reds.sort_by! { |a| a[:x] }
+blues.sort_by! { |a| a[:x] }
 
 blues.each do |blue|
-  candidates = reds.select { |red| red[:x] < blue[:x] }.sort { |a, b| a[:y] <=> b[:y] }.reverse
+  candidates = reds.select { |red| red[:x] < blue[:x] }.sort_by { |a| a[:y] }.reverse
   candidates.each do |c|
     next unless c[:y] < blue[:y]
     counter += 1
