@@ -1,3 +1,7 @@
-x = gets.to_i
-y = gets.chomp.split.map(&:to_i)
-puts x
+t = []
+b = []
+t.push(gets.to_i)
+t.push(gets.to_i)
+b.push(gets.to_i)
+b.push(gets.to_i)
+puts t.min + b.min
