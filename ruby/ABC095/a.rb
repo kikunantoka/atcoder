@@ -1,3 +1,2 @@
-x = gets.to_i
-y = gets.chomp.split.map(&:to_i)
-puts x
+x = gets.to_s
+puts 700 + x.count('o') * 100
