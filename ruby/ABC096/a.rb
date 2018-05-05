@@ -1,3 +1,2 @@
-x = gets.to_i
-y = gets.chomp.split.map(&:to_i)
-puts x
+a, b = gets.chomp.split.map(&:to_i)
+puts a <= b ? a : a - 1
