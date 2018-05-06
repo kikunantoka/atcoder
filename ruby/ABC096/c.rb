@@ -3,45 +3,25 @@ s = []
 h.times do |i|
   s[i] = gets.chomp.split("").map(&:to_s)
 end
+d = [[-1, 0], [1, 0], [0, -1], [0, 1]]
+
 
 h.times do |i|
   w.times do |j|
-    if s[i][j] != "."
-      # 右側に探索
-      if j + 1 < w && s[i][j + 1] != "."
-        s[i][j] = "@"
-        x = 1
-        while (j + x < w) do
-          break if s[i][j + x] == "."
-          if s[i][j + x] != "."
-            s[i][j + x] = "@"
-            y = 1
-            while (i + y < h) do
-              break if s[i + y][j + x] == "."
-              s[i + y][j + x] = "@" if s[i + y][j + x] != "."
-              y += 1
-            end
-          end
-          x += 1
+    if s[i][j] == "#"
+      result = false
+      d.each do |dy, dx|
+        next if i + dy < 0 || i + dy >  h - 1 || j + dx < 0 || j + dx > w - 1
+        if s[i + dy][j + dx] == "#"
+          result = true
+          break
         end
       end
-      # 下側に探索
-      if i + 1 < h && s[i + 1][j] != "."
-        s[i][j] = "@"
-        y = 1
-        while (i + y < h) do
-          break if s[i + y][j] == "."
-          s[i + y][j] = "@" if s[i + y][j] != "."
-          y += 1
-        end
+      unless result
+        puts "No"
+        exit
       end
     end
   end
 end
-
-result = "Yes"
-s.each do |si|
-  result = "No" if si.include?("#")
-end
-
-puts result
+puts "Yes"
