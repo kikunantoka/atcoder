@@ -2,7 +2,7 @@ s = gets.chomp.to_s
 k = gets.to_i
 words = []
 s.size.times do |i|
-  s.size.times do |j|
+  k.times do |j|
     words.push(s[i..(i + j)]) if i + j <= s.size
   end
 end
