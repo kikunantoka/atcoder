@@ -11,7 +11,6 @@ a5 = []
 a6 = []
 a7 = []
 a8 = []
-r1 = r2 = r3 = r4 = r5 = r6 = r7 = r8 = 0
 n.times do |i|
   x, y, z = gets.chomp.split.map(&:to_i)
   a1[i] = x + y + z
