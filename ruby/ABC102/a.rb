@@ -1,3 +1,2 @@
-x = gets.to_i
-y = gets.chomp.split.map(&:to_i)
-puts x
+n = gets.to_i
+puts n % 2 == 0 ? n : n * 2
