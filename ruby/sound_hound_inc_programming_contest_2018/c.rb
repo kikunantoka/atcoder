@@ -1,12 +1,6 @@
 n, m, d = gets.chomp.split.map(&:to_i)
-nums = [*(1..n)]
-sum = 0
-count = 0
-nums.repeated_permutation(m) do |as|
-  count += 1
-  as.length.times do |i|
-    next if as.length - 1 == i
-    sum += 1 if (as[i] - as[i + 1]).abs == d
-  end
+if d == 0
+  puts (m - 1).to_f / n
+else
+  puts 2.0 * (n - d) * (m - 1) / (n ** 2)
 end
-puts sum / (count * 1.0)
