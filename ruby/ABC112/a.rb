@@ -1,3 +1,8 @@
 x = gets.to_i
-y = gets.chomp.split.map(&:to_i)
-puts x
+if x == 1
+  puts 'Hello World'
+else
+  a = gets.to_i
+  b = gets.to_i
+  puts a+b
+end
